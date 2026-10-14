@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'echo "Building my application..."'
                 sh 'mkdir -p build'
-                sh 'echo "Hello from Jenkins" > build/app.txt'
+                sh 'echo "Hello from my GitHub webhook!" > build/app.txt'
                 sh 'cat build/app.txt'
             }
         }
