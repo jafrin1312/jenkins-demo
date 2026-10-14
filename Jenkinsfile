@@ -12,7 +12,7 @@ pipeline {
             steps {
                 sh 'echo "Building my application..."'
                 sh 'mkdir -p build'
-                sh 'echo "Hello from my GitHub webhook!" > build/app.txt'
+                sh 'echo "Hello from Jenkins" > build/app.txt'
                 sh 'cat build/app.txt'
             }
         }
@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'test -f build/app.txt'
-                sh 'grep -q "Hello from Jenkins" build/app.txt'
+                sh 'grep -q "Hello from my GitHub webhook!" build/app.txt'
                 echo 'All tests passed!'
             }
         }
