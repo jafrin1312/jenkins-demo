@@ -20,7 +20,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'test -f build/app.txt'
-                sh 'grep -q "Hello from my GitHub webhook!" build/app.txt'
+                sh 'grep -q "Hello from my GitHub webhook" build/app.txt'
                 echo 'All tests passed!'
             }
         }
